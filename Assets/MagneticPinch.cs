@@ -9,7 +9,7 @@ using Leap;
  */
 public class MagneticPinch : MonoBehaviour
 {
-
+    //123
     public const float TRIGGER_DISTANCE_RATIO = 0.7f;
 
     /** The stiffness of the spring force used to move the object toward the hand. */
