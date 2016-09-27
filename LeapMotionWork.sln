@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeapMotionWork.CSharp.Plugins", "LeapMotionWork.CSharp.Plugins.csproj", "{57E05567-65CA-15F4-ACCB-D80AA940F70C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeapMotionWork.CSharp", "LeapMotionWork.CSharp.csproj", "{4127DDEE-FB10-8059-D050-A22D19C9538A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeapMotionWork.CSharp.Editor", "LeapMotionWork.CSharp.Editor.csproj", "{D67EE7ED-13DC-1CEF-325C-976BBA6C265D}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57E05567-65CA-15F4-ACCB-D80AA940F70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E05567-65CA-15F4-ACCB-D80AA940F70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E05567-65CA-15F4-ACCB-D80AA940F70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E05567-65CA-15F4-ACCB-D80AA940F70C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4127DDEE-FB10-8059-D050-A22D19C9538A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4127DDEE-FB10-8059-D050-A22D19C9538A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4127DDEE-FB10-8059-D050-A22D19C9538A}.Release|Any CPU.ActiveCfg = Release|Any CPU
