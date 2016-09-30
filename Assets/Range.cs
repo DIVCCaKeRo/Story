@@ -11,7 +11,7 @@ public class Range : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 Pos = gameObject.transform.position;
-        gameObject.transform.position = new Vector3(Mathf.Clamp(Pos.x, -4.7f, 4.7f), Mathf.Clamp(Pos.y, -0.2f, 3.7f), Mathf.Clamp(Pos.z,-4.7f ,0.3f ));             
+        gameObject.transform.position = new Vector3(Mathf.Clamp(Pos.x, -16.0f, 16.0f), Mathf.Clamp(Pos.y, 1.0f, 18.0f), Mathf.Clamp(Pos.z,-22.0f ,22.0f ));             
     }
     void OnCollisionEnter(Collision test) 
     {

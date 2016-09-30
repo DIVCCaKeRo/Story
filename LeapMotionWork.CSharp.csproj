@@ -136,6 +136,7 @@
     <Compile Include="Assets\LeapMotion\Scripts\VR\VRHeightOffset.cs" />
     <Compile Include="Assets\MagneticPinch.cs" />
     <Compile Include="Assets\Range.cs" />
+    <Compile Include="Assets\Scripts\move.cs" />
     <Compile Include="Assets\StretchToScreen.cs" />
     <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
     <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
