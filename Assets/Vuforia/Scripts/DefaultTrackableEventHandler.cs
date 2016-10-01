@@ -4,6 +4,7 @@ All Rights Reserved.
 Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
+using System;
 using UnityEngine;
 
 namespace Vuforia
@@ -11,11 +12,15 @@ namespace Vuforia
     /// <summary>
     /// A custom handler that implements the ITrackableEventHandler interface.
     /// </summary>
+
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+        
+        public static bool Ready = false,test=true;
+        
         #region PRIVATE_MEMBER_VARIABLES
- 
+
         private TrackableBehaviour mTrackableBehaviour;
     
         #endregion // PRIVATE_MEMBER_VARIABLES
@@ -26,23 +31,35 @@ namespace Vuforia
     
         void Start()
         {
+            print("asdfsadf");
             mTrackableBehaviour = GetComponent<TrackableBehaviour>();
             if (mTrackableBehaviour)
             {
                 mTrackableBehaviour.RegisterTrackableEventHandler(this);
             }
         }
-
+        void Update()
+        {    
+            if(test)
+            {
+                if(Ready)
+                {
+                    mTrackableBehaviour.RegisterTrackableEventHandler(this);
+                    test = false;
+                }
+            }       
+           
+        }
         #endregion // UNTIY_MONOBEHAVIOUR_METHODS
 
 
 
-        #region PUBLIC_METHODS
+            #region PUBLIC_METHODS
 
-        /// <summary>
-        /// Implementation of the ITrackableEventHandler function called when the
-        /// tracking state changes.
-        /// </summary>
+            /// <summary>
+            /// Implementation of the ITrackableEventHandler function called when the
+            /// tracking state changes.
+            /// </summary>
         public void OnTrackableStateChanged(
                                         TrackableBehaviour.Status previousStatus,
                                         TrackableBehaviour.Status newStatus)
@@ -51,7 +68,7 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.TRACKED ||
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
-                OnTrackingFound();
+                    OnTrackingFound();            
             }
             else
             {
@@ -65,25 +82,28 @@ namespace Vuforia
 
         #region PRIVATE_METHODS
 
-
         private void OnTrackingFound()
         {
-            Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
-            Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
-
-            // Enable rendering:
-            foreach (Renderer component in rendererComponents)
+            
+           if(Ready)
             {
-                component.enabled = true;
-            }
+                Renderer[] rendererComponents = GetComponentsInChildren<Renderer>(true);
+                Collider[] colliderComponents = GetComponentsInChildren<Collider>(true);
 
-            // Enable colliders:
-            foreach (Collider component in colliderComponents)
-            {
-                component.enabled = true;
-            }
+                // Enable rendering:
+                foreach (Renderer component in rendererComponents)
+                {
+                    component.enabled = true;
+                }
 
-            Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+                // Enable colliders:
+                foreach (Collider component in colliderComponents)
+                {
+                    component.enabled = true;
+                }
+
+                Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+            }    
         }
 
 

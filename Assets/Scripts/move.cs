@@ -4,7 +4,7 @@ using System.Collections;
 public class move : MonoBehaviour
 {
     float stopTime, moveTime, velX, velZ, timeCounter1, timeCounter2;
-    float maxPosX = 0.5f, maxPosZ = 0.5f, minPosX = -0.5f, minPosZ = -0.5f;
+    float maxPosX = 0.3f, maxPosZ = 0.5f, minPosX = -0.3f, minPosZ = -0.5f;
     
     void Start(){
         Change();
